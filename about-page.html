@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Yourtoolkit.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --brand-purple: #645394;
+  --brand-green: #00815A;
+  --text-dark: #4A4A4A;
+  --text-body: #645394;
+  --text-light: #6B6B6B;
+  --bg-light: #fcf2fb;
+  --bg-card: #ffffff;
+  --border-light: #E8D5E8;
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.08);
+  --red-alert: #C41E3A;
+  --medium-purple: #7B6B8D;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text-body);
+  line-height: 1.6;
+  background: #fff;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===================== GENERAL LINKS ===================== */
+a { color: var(--brand-green); }
+a:hover { text-decoration: underline; }
+
+/* ===================== CRISIS BANNER ===================== */
+.crisis-banner {
+  background: var(--brand-purple);
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.crisis-banner a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* ===================== HEADER / NAV ===================== */
+.site-header {
+  background: #fff;
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo-link { display: inline-flex; align-items: center; text-decoration: none; }
+.logo-link svg { height: 48px; width: auto; }
+.nav-main { display: flex; align-items: center; gap: 8px; }
+.nav-main a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--brand-purple);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 2px solid transparent;
+}
+.nav-main a:hover { border-bottom-color: var(--brand-purple); }
+.nav-main a.quick-exit { color: #fff !important; border-bottom: none; }
+.nav-main a.quick-exit:hover { border-bottom: none; }
+.quick-exit {
+  background: var(--red-alert);
+  color: #fff !important;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 8px 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.quick-exit:hover { background: #a3182f; }
+
+/* ===================== PAGE TITLE ===================== */
+.page-header {
+  padding: 48px 40px 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.page-header h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--brand-purple);
+  text-align: center;
+}
+
+/* ===================== CONTENT WRAPPER ===================== */
+.content-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ===================== INTRO SECTION ===================== */
+.intro-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+.intro-text { flex: 1; }
+.intro-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.intro-image { flex: 0 0 250px; text-align: center; }
+.intro-image img { width: 250px; height: auto; }
+
+/* ===================== VISION / PURPOSE / VALUES ===================== */
+.vpv-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.vpv-pane {
+  flex: 1;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 28px 24px;
+  text-align: center;
+}
+.vpv-pane.shaded {
+  background: var(--bg-light);
+}
+.vpv-pane h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--brand-purple);
+  margin-bottom: 16px;
+}
+.vpv-pane p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.vpv-pane ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  text-align: left;
+  padding: 0;
+}
+.vpv-pane ul li {
+  font-size: 0.95rem;
+  padding-left: 24px;
+  position: relative;
+}
+.vpv-pane ul li::before {
+  content: '\f35a';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+  position: absolute;
+  left: 0;
+  color: var(--brand-purple);
+  font-size: 0.85rem;
+  top: 3px;
+}
+
+/* ===================== HISTORY ===================== */
+.history-section {
+  margin-bottom: 48px;
+}
+.history-section h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--brand-purple);
+  text-align: center;
+  margin-bottom: 24px;
+}
+.history-cols {
+  column-count: 2;
+  column-gap: 40px;
+}
+.history-cols p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  break-inside: avoid;
+}
+
+/* ===================== REAL VOICES / TESTIMONIAL ===================== */
+.voices-section {
+  background: var(--bg-light);
+  border-radius: 12px;
+  padding: 48px 60px;
+  text-align: center;
+  margin-bottom: 64px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 64px;
+}
+.voices-section h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--brand-purple);
+  margin-bottom: 16px;
+}
+.voices-section > p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+.testimonial-quote {
+  border-left: none;
+  padding: 0;
+  margin: 0;
+}
+.testimonial-quote p {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.testimonial-quote cite {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* ===================== TEAM SECTION ===================== */
+.team-section {
+  padding: 48px 0 64px;
+}
+.team-section > h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--brand-purple);
+  margin-bottom: 24px;
+}
+
+/* Variant handling */
+.team-variant { display: none; }
+.team-variant.active, .team-variant[data-variant="v1"] { display: block; }
+
+/* Tabs */
+.team-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 32px;
+  border-bottom: 2px solid var(--border-light);
+}
+.team-tab {
+  background: none;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-light);
+  padding: 12px 24px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.team-tab:hover { color: var(--brand-purple); }
+.team-tab.active {
+  color: var(--brand-purple);
+  border-bottom-color: var(--brand-purple);
+}
+
+/* Team Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.team-panel { display: none; }
+.team-panel.active { display: block; }
+
+/* Team Card */
+.team-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: var(--shadow-card);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.team-card-top {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.team-card-info { flex: 1; }
+.team-card-info h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--brand-purple);
+  margin-bottom: 4px;
+}
+.team-card-info .role {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+.team-card-info .social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px; /* outer purple box padding */
+  border-radius: 10%;
+  background: var(--brand-purple); /* purple outer box */
+  color: var(--brand-purple);
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.team-card-info .social-link:hover { background: #006a49; }
+/* inner icon box */
+.team-card-info .social-link i {
+  background: #fff;
+  color: var(--brand-purple);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+}
+.team-card-photo {
+  flex-shrink: 0;
+}
+.team-card-photo img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ===================== FOOTER ===================== */
+.site-footer {
+  background: var(--brand-purple);
+  color: rgba(255,255,255,0.8);
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  font-size: 0.85rem;
+}
+.footer-col h4 {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.footer-col a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 6px;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: #fff; text-decoration: underline; }
+.footer-acknowledgment p {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  max-width: 220px;
+  color: rgba(255,255,255,0.7);
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
+  .vpv-row { flex-direction: column; }
+  .history-cols { column-count: 1; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .intro-section { flex-direction: column; }
+  .intro-image { display: none; }
+}
+@media (max-width: 600px) {
+  .site-header { padding: 12px 16px; flex-wrap: wrap; gap: 8px; }
+  .nav-main { gap: 4px; flex-wrap: wrap; }
+  .nav-main a { padding: 6px 10px; font-size: 0.8rem; }
+  .content-wrap, .page-header { padding-left: 20px; padding-right: 20px; }
+  .team-grid { grid-template-columns: 1fr; }
+  .site-footer { flex-direction: column; gap: 24px; padding: 32px 20px; }
+  .voices-section { padding: 32px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Crisis Banner -->
+<div class="crisis-banner">
+  In crisis now? <a href="tel:000">Call 000</a>. &nbsp;|&nbsp;
+  If you need advice to leave right now, visit <a href="#">Leave in an Emergency</a>.
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <a href="#" class="logo-link">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 515.9 155.9"><defs><style>.cls-1{fill:#097b49;stroke-width:0}.cls-2{fill:#5e4e85;stroke-width:0}</style></defs><g id="Type"><g><path class="cls-1" d="M135.2 64.2v11.7h-3V64.2l-10.2-17.5h3.4l8.4 14.5 8.3-14.5h3.3l-10.2 17.5Z"/><path class="cls-1" d="M170.2 76.5c-8.1 0-14.4-6.1-14.4-15.1s6-15.3 14.4-15.3 14.4 6.1 14.4 15.1-6 15.3-14.4 15.3Zm-.1-27.8c-6.5 0-11.3 5-11.3 12.4s4.8 12.7 11.5 12.7 11.2-5.1 11.2-12.5-4.8-12.6-11.4-12.6Z"/><path class="cls-1" d="M209.7 76.5c-7 0-10.9-4.4-10.9-11.3V46.7h2.9v18.1c0 5.6 2.8 8.9 8.2 8.9s8-3.1 8-9V46.7h2.9v18c0 7.2-3.8 11.8-11.1 11.8Z"/><path class="cls-1" d="M240.6 75.9h-3V46.7h7.9c7.2 0 10.6 3.3 10.6 8.4s-3 7.1-6.8 8.2l8.1 12.6h-3.5l-7.5-12.1-5.8.4v11.7Zm5.2-14.6c3.9-.1 7.2-2.3 7.2-6.1s-2.9-5.8-7.9-5.8h-4.5v12.2l5.2-.2Z"/></g><path class="cls-2" d="M138.3 90.2v23h-7.4v-23h-9.3v-6.2h26v6.2h-9.3Z"/><path class="cls-2" d="M172.7 113.9c-8.6 0-15.2-5.4-15.2-15.2s6.6-15.4 15.3-15.4 15.3 5.3 15.3 15.2-6.7 15.4-15.4 15.4Zm0-24.6c-5 0-7.8 3.7-7.8 9.2s2.9 9.4 7.9 9.4 7.8-3.8 7.8-9.3-2.9-9.4-7.9-9.4Z"/><path class="cls-2" d="M214 113.9c-8.6 0-15.2-5.4-15.2-15.2s6.6-15.4 15.3-15.4 15.3 5.3 15.3 15.2-6.7 15.4-15.4 15.4Zm0-24.6c-5 0-7.8 3.7-7.8 9.2s2.9 9.4 7.9 9.4 7.8-3.8 7.8-9.3-2.9-9.4-7.9-9.4Z"/><path class="cls-2" d="M242.4 113.2V84h7.4v23h12.2v6.2h-19.7Z"/><path class="cls-2" d="m282.2 96.9 9.7-12.9h8.5l-11.5 14.3 11.8 15h-8.9l-9.6-12.9v12.9h-7.4V84h7.4v12.9Z"/><path class="cls-2" d="M313.8 113.2V84h7.4v29.2h-7.4Z"/><path class="cls-2" d="M351.4 90.2v23h-7.4v-23h-9.3v-6.2h26v6.2h-9.3Z"/></g><g id="_.com_Part"><path class="cls-2" d="M368.6 105.7c2.1 0 3.8 1.7 3.8 3.8s-1.7 3.8-3.8 3.8-3.8-1.7-3.8-3.8 1.7-3.8 3.8-3.8Z"/><path class="cls-2" d="M399.7 91.6c-1.3-1.5-3.1-2.4-5.5-2.4-4.8 0-8.4 3.9-8.4 9.3s3.6 9.3 8.2 9.3 4.7-1.1 6-3.1l5.3 4c-2.4 3.4-6.5 5-10.5 5-9.1 0-15.7-5.9-15.7-15.3s6.6-15.3 15.7-15.3 7.3 1.1 9.8 4.3l-4.9 4Z"/><path class="cls-2" d="M428.7 113.9c-8.6 0-15.2-5.4-15.2-15.2s6.6-15.4 15.3-15.4 15.3 5.3 15.3 15.2-6.7 15.4-15.4 15.4Zm0-24.6c-5 0-7.8 3.7-7.8 9.2s2.9 9.4 7.9 9.4 7.8-3.8 7.8-9.3-2.9-9.4-7.9-9.4Z"/><path class="cls-2" d="M454.1 84h9.7l6.7 18.9 6.7-18.9h9.6v29h-6.4V90.7l-7.6 22.3h-4.9L460.6 90.7v22.3h-6.4V84Z"/></g><g id="Icon"><path class="cls-1" d="M68.1 60 49.6 70.7c-.9.5-1.4 1.4-1.4 2.4v21.4c0 1 .5 1.9 1.4 2.4l18.5 10.7c.9.5 1.9.5 2.8 0l18.5-10.7c.9-.5 1.4-1.4 1.4-2.4V73.1c0-1-.5-1.9-1.4-2.4L70.9 60c-.9-.5-1.9-.5-2.8 0Z"/><path class="cls-2" d="M101.4 65.4c-1.3-1.2-2.5-2-3.5-2.7-1.2-.8-2.9 0-2.9 1.6v31.7c0 1.9-1 3.6-2.6 4.5l-20.2 11.7c-.8.5-1.7.7-2.6.7-.9 0-1.8-.2-2.6-.7l-20.2-11.7c-1.6-.9-2.6-2.7-2.6-4.5V64.3c0-1.5-1.6-2.4-2.9-1.6-1 .7-2.2 1.6-3.5 2.7-8.2 7.6-13.6 19.8-13.6 32.5s3.4 19.8 9.2 27.4c1.4 1.9 3.6 3 5.9 3h8.3l1.9-6.3c.5-1.5 2.1-2.4 3.6-1.9 1.5.5 2.4 2.1 1.9 3.6l-1.4 4.7h6l1.9-6.3c.5-1.5 2.1-2.4 3.6-1.9 1.5.5 2.4 2.1 1.9 3.6l-1.4 4.7h6l1.9-6.3c.5-1.5 2.1-2.4 3.6-1.9 1.5.5 2.4 2.1 1.9 3.6l-1.4 4.7h6l1.9-6.3c.5-1.5 2.1-2.4 3.6-1.9 1.5.5 2.4 2.1 1.9 3.6l-1.4 4.7h10.6c2.3 0 4.5-1.1 5.9-3 5.8-7.6 9.2-17.1 9.2-27.4s-5.5-24.9-13.6-32.5Z"/><path class="cls-2" d="M96.5 48.5c-1.4-8.4-4.6-15.5-9.4-20.4-4.8-4.9-10.9-7.5-17.6-7.5s-12.8 2.6-17.6 7.5c-4.8 4.9-8 11.9-9.4 20.4l-3.6-.3 5.1 10.6 6.6-9.7-3.5-.3c3-17.3 13.3-23.5 22.3-23.5s19.3 6.2 22.3 23.5l-3.5.3 6.6 9.7 5.1-10.6-3.6.3Z"/></g></svg>
+  </a>
+  <nav class="nav-main">
+    <a href="#">Help for me</a>
+    <a href="#">Help for someone else</a>
+    <a href="#">About</a>
+    <a href="#">Get Involved</a>
+    <a href="https://www.abc.net.au/news" class="quick-exit" target="_blank">
+      <i class="far fa-arrow-alt-circle-right"></i> Quick Exit
+    </a>
+  </nav>
+</header>
+
+<div class="page-header">
+  <h1>About</h1>
+</div>
+
+<div class="content-wrap">
+
+  <!-- Intro -->
+  <div class="intro-section">
+    <div class="intro-text">
+      <p>Yourtoolkit.com was launched in 2019 by the Hon. Minister Simone McGurk to support women facing family and domestic violence.</p>
+      <p>Yourtoolkit.com provides a free, comprehensive, road map towards independence and resilience.</p>
+      <p>Regularly updated and interactive, the website contains a broad range of information about keeping safe, finding support, legal and money matters.</p>
+    </div>
+    <div class="intro-image">
+      <img src="./resources/1G.png" alt="Yourtoolkit illustration">
+    </div>
+  </div>
+
+  <!-- Vision / Purpose / Values -->
+  <div class="vpv-row">
+    <div class="vpv-pane shaded" style="flex-basis: 35%;">
+      <h2>Vision</h2>
+      <p id="visionText"></p>
+    </div>
+    <div class="vpv-pane shaded" style="flex-basis: 30%;">
+      <h2>Purpose</h2>
+      <p id="purposeText"></p>
+    </div>
+    <div class="vpv-pane shaded" style="flex-basis: 35%;">
+      <h2>Values</h2>
+      <ul id="valuesList">
+      </ul>
+    </div>
+  </div>
+
+  <!-- History -->
+  <div class="history-section">
+    <h2>History</h2>
+    <div class="history-cols">
+      <p>Financial Toolbox was founded in 2017 with the aim of empowering women through financial education. In partnership with Chartered Accountants Australia New Zealand, our early activities focused on educational workshops for women about personal finances and money matters.</p>
+      <p>Our work to support women and children facing, or at risk of, family and domestic violence was initially focused on financial abuse. This quickly grew to the provision of a more comprehensive suite of information to empower those facing abuse through the various steps of their journey.</p>
+      <p>Yourtoolkit.com was developed as a free, online resource after extensive consultation with those facing abuse and those working with them about how we could best provide support to augment and complement existing family and domestic violence services.</p>
+      <p>In early 2023 we became a Company Limited by Guarantee and changed our name from Financial Toolbox Inc. to Yourtoolkit.com Limited (ACN 666 106 707). Yourtoolkit.com is maintained by the Women at Risk Trust (&ldquo;the Trust&rdquo;) which was established in 2019 for the purpose of providing support to women and their children facing or have faced domestic violence and/or financial abuse.</p>
+      <p>The Trust is a Public Benevolent Institution endorsed by the Australian Taxation Office with Deductible Gift Recipient status and Yourtoolkit.com Limited is a charity registered with the Australian Charities and Not-for-profits Commission.</p>
+    </div>
+  </div>
+
+  <!-- Real Voices / Testimonial -->
+  <div class="voices-section">
+    <h2>Real voices, real impact</h2>
+    <p>Yourtoolkit.com is dedicated to supporting women escaping family and domestic violence with practical, evidence based resources that empower them on their journey. We collaborate with lived experience reference groups to ensure our content is safe, reliable and relevant.</p>
+    <blockquote class="testimonial-quote">
+      <p><em>This platform helped me to safely escape a dangerous situation and gave me the confidence to take action.</em></p>
+      <cite><em>&ndash; Website user</em></cite>
+    </blockquote>
+  </div>
+
+  <!-- Team Members -->
+
+  <!-- Variant selector allows switching between multiple versions of the team section -->
+  <div class="team-variant-selector" style="margin-bottom:24px; text-align:center;">
+    <label for="variantSelect" style="font-weight:600; margin-right:8px;">Choose version:</label>
+    <select id="variantSelect" style="font-size:0.95rem; padding:6px 10px;">
+      <option value="v1">Version 1 (current)</option>
+      <option value="v2">Version 2 (alternate)</option>
+      <!-- add more versions as needed -->
+    </select>
+  </div>
+
+  <!-- variant #1 (original content) -->
+  <div class="team-variant" data-variant="v1">
+    <div class="team-section">
+      <h2>Team Members</h2>
+
+      <div class="team-tabs">
+        <button class="team-tab active" data-tab="board">Board &amp; Leadership</button>
+        <button class="team-tab" data-tab="ambassadors">Ambassadors</button>
+      </div>
+
+    <!-- Board & Leadership -->
+    <div class="team-panel active" id="panel-board">
+      <div class="team-grid">
+
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Melissa Perry</h3>
+              <p class="role">CEO</p>
+              <a href="https://www.linkedin.com/in/elisafearau/" class="social-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/undraw_a-woman-avatar_ifsl.png" alt="Melissa Perry">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;"></p>
+        </div>
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Elisa Fear</h3>
+              <p class="role">Chair</p>
+              <a href="https://www.linkedin.com/in/elisafearau/" class="social-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/Elisa-Fear-head-shot-1.webp" alt="Elisa Fear">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;">Elisa Fear has extensive financial executive experience from roles in investment banking, including equity capital markets, debt, advisory and venture capital. This is overlaid with commercial experience from owning and running businesses. In addition to Yourtoolkit.com, Elisa is currently on the boards of Curtin University and St John WA. She is a Graduate of the Australian Institute of Company Directors and holds an MBA (Finance).</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Nadia Mansour</h3>
+              <p class="role">Director</p>
+              <a href="#" class="social-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/Nadia-Mansour-head-shot-1.webp" alt="Nadia Mansour">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;">Nadia is an experienced senior leader with more than 20 years&rsquo; experience. She is currently the Chief Legal Counsel &amp; Company Secretary at HBF. Nadia has worked as a management consultant and lawyer. She is an experienced governance, regulatory and risk professional and trusted general counsel.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Steven Cole</h3>
+              <p class="role">Chair Funding Committee</p>
+              <a href="#" class="social-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/Steven-Cole-Headshot-1.webp" alt="Steven Cole">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;">Steven Cole has over 40 years of professional, corporate and business experience through senior legal and governance consultancy, as well as a range of executive management and non-executive appointments.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Gillian Nathan</h3>
+              <p class="role">Chair of Audit, Finance and Risk Committee</p>
+              <a href="#" class="social-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/GILLIAN-MINI-SESSION-2019-6377-400x400.jpg" alt="Gillian Nathan">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;">Gillian Nathan founded her tax and accounting practice, Simple Solutions Accounting Services in 2016, and now employs 13 staff and services over 1300 clients around Australia.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Georgie Capp</h3>
+              <p class="role">Director</p>
+              <a href="#" class="social-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/Georgie-Capp-Yourtoolkit.com_-400x400.jpg" alt="Georgie Capp">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;">Georgie Capp has extensive C-suite experience in Australia and internationally. Georgie brings a wealth of experience and knowledge in governance, strategy, and risk, mainly within the marketing, events, entertainment, FMCG, NFP, and charity sectors.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Michelle Dillon</h3>
+              <p class="role">Director</p>
+              <a href="#" class="social-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/Michelle-Dillon-400x400.jpeg" alt="Michelle Dillon">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;">Michelle is the Chief Executive Officer of Ngala, the parenting centre for WA. She is a Registered Nurse with an extensive background in health, disability and community.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Matt Mueller</h3>
+              <p class="role">Director</p>
+              <a href="#" class="social-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/undraw_male-avatar_zkzx.png" alt="Matt Mueller">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;"></p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Ambassadors -->
+    <div class="team-panel" id="panel-ambassadors">
+      <div class="team-grid">
+
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Lyn Beazley AO</h3>
+              <p class="role">Ambassador</p>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/lyn-beazley-head-shot-1.webp" alt="Lyn Beazley AO">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;">Professor Lyn Beazley&rsquo;s career in medical research was followed by becoming the Chief Scientist of Western Australia from 2006 to 2013. Lyn was awarded Officer of the Order of Australia in 2009 and named WA Australian of the Year 2015.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Mark Bush</h3>
+              <p class="role">Ambassador</p>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/Mark-Bush-head-shot-1.webp" alt="Mark Bush">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;">Emeritus Professor Mark Bush joined the University of Western Australia in 1984 as a lecturer, and subsequently served as Head of the Engineering Department and Dean of the Faculty.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+  <!-- variant #2 (original content) -->
+  <div class="team-variant" data-variant="v2">
+    <div class="team-section">
+      <h2>Team Members</h2>
+
+      <div class="team-tabs">
+        <button class="team-tab active" data-tab="board">Board &amp; Leadership</button>
+        <button class="team-tab" data-tab="ambassadors">Ambassadors</button>
+      </div>
+
+    <!-- Board & Leadership -->
+    <div class="team-panel active" id="panel-board">
+      <div class="team-grid">
+
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Melissa Perry</h3>
+              <p class="role">CEO</p>
+              <a href="https://www.linkedin.com/in/elisafearau/" class="social-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/undraw_a-woman-avatar_ifsl.png" alt="Melissa Perry">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;"></p>
+        </div>
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Elisa Fear</h3>
+              <p class="role">Chair</p>
+              <a href="https://www.linkedin.com/in/elisafearau/" class="social-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/Elisa-Fear-head-shot-1.webp" alt="Elisa Fear">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;"></p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Nadia Mansour</h3>
+              <p class="role">Director</p>
+              <a href="#" class="social-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/Nadia-Mansour-head-shot-1.webp" alt="Nadia Mansour">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;"></p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Steven Cole</h3>
+              <p class="role">Chair Funding Committee</p>
+              <a href="#" class="social-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/Steven-Cole-Headshot-1.webp" alt="Steven Cole">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;"></p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Gillian Nathan</h3>
+              <p class="role">Chair of Audit, Finance and Risk Committee</p>
+              <a href="#" class="social-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/GILLIAN-MINI-SESSION-2019-6377-400x400.jpg" alt="Gillian Nathan">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;"></p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Georgie Capp</h3>
+              <p class="role">Director</p>
+              <a href="#" class="social-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/Georgie-Capp-Yourtoolkit.com_-400x400.jpg" alt="Georgie Capp">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;"></p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Michelle Dillon</h3>
+              <p class="role">Director</p>
+              <a href="#" class="social-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/Michelle-Dillon-400x400.jpeg" alt="Michelle Dillon">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;"></p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Matt Mueller</h3>
+              <p class="role">Director</p>
+              <a href="#" class="social-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/undraw_male-avatar_zkzx.png" alt="Matt Mueller">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;"></p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Ambassadors -->
+    <div class="team-panel" id="panel-ambassadors">
+      <div class="team-grid">
+
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Lyn Beazley AO</h3>
+              <p class="role">Ambassador</p>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/lyn-beazley-head-shot-1.webp" alt="Lyn Beazley AO">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;">Professor Lyn Beazley&rsquo;s career in medical research was followed by becoming the Chief Scientist of Western Australia from 2006 to 2013. Lyn was awarded Officer of the Order of Australia in 2009 and named WA Australian of the Year 2015.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-top">
+            <div class="team-card-info">
+              <h3>Mark Bush</h3>
+              <p class="role">Ambassador</p>
+            </div>
+            <div class="team-card-photo">
+              <img src="./resources/Mark-Bush-head-shot-1.webp" alt="Mark Bush">
+            </div>
+          </div>
+          <p style="font-size:0.9rem; margin-top:12px; line-height:1.7;">Emeritus Professor Mark Bush joined the University of Western Australia in 1984 as a lecturer, and subsequently served as Head of the Engineering Department and Dean of the Faculty.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-col footer-acknowledgment">
+    <p>Yourtoolkit.com acknowledges the Traditional Custodians of Country throughout Australia and recognises their continuing connection to land, waters and community. We pay our respects to Elders past and present.</p>
+  </div>
+  <div class="footer-col">
+    <h4>About</h4>
+    <a href="#">About us</a>
+    <a href="#">What&rsquo;s on this website?</a>
+  </div>
+  <div class="footer-col">
+    <h4>Get Involved</h4>
+    <a href="#">Become a corporate partner</a>
+    <a href="#">Donate</a>
+    <a href="#">Provide your feedback</a>
+    <a href="#">Contact us</a>
+  </div>
+  <div class="footer-col">
+    <h4>Legal</h4>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Disclaimer</a>
+    <a href="#">Sitemap</a>
+  </div>
+</footer>
+
+<script>
+// Tab switching (scoped to active variant)
+document.querySelectorAll('.team-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const variantContainer = tab.closest('.team-variant');
+    variantContainer.querySelectorAll('.team-tab').forEach(t => t.classList.remove('active'));
+    variantContainer.querySelectorAll('.team-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    variantContainer.querySelector('#panel-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+// Variant selector behaviour
+const variantSelect = document.getElementById('variantSelect');
+variantSelect.addEventListener('change', () => {
+  const chosen = variantSelect.value;
+  document.querySelectorAll('.team-variant').forEach(v => {
+    if (v.dataset.variant === chosen) {
+      v.style.display = 'block';
+      // reset tabs inside this variant
+      const tabs = v.querySelectorAll('.team-tab');
+      const panels = v.querySelectorAll('.team-panel');
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      if (tabs.length) tabs[0].classList.add('active');
+      if (panels.length) panels[0].classList.add('active');
+    } else {
+      v.style.display = 'none';
+    }
+  });
+});
+
+const vision = "All women impacted by Family and Domestic Violence are empowered to make informed choices";
+const purpose = "To support and empower women and children to live their lives free from violence, abuse and coercive control";
+const values = ["Survivor-Centred","Respect", "Integrity", "Empowerment", "Compassion"];
+
+document.getElementById('visionText').textContent = vision;
+document.getElementById('purposeText').textContent = purpose;
+const valuesList = document.getElementById('valuesList');
+values.forEach(value => {
+  const li = document.createElement('li');
+  li.textContent = value;
+  valuesList.appendChild(li);
+});
+</script>
+
+</body>
+</html>
